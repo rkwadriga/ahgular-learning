@@ -1,11 +1,18 @@
-<!--<app-app-sizer [size]="fontSize" (sizeChange)="changeSize($event)">--> <!-- Long way for "two-ways" binding -->
-<app-app-sizer [(size)]="fontSize"> <!-- Short way for "two-ways" binding -->
-    <table>
-        <tr>
-            <td [attr.colSpan]="1 + 1">
-                <img [attr.src]="itemImageUrl" />
-            </td>
-        </tr>
-    </table>
-    <div [style.fontSize.px]="fontSize">Resizable text</div>
-</app-app-sizer>
+<table>
+    <tr>
+        <td [attr.colSpan]="1 + 1">
+            <img [attr.src]="itemImageUrl" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+             <!-- Just create a button with ID "phone" an put it's value in callback-function -->
+            <!--<input #phone type="text" placeholder="Phone number" />
+            <button (click)="onCall(phone.value)">Call</button>-->
+
+            <!-- Make an input as "model" of component "phoneNumber" param -->
+            <input [(ngModel)]="phoneNumber" type="text" placeholder="Phone number" />
+            <button (click)="onCall()">Call</button>
+        </td>
+    </tr>
+</table>

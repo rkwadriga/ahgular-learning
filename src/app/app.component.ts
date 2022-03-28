@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     itemImageUrl = 'http://localhost:3000/public/img/0015/15/e6f96024d40a3.jpeg';
-    fontSize = 16;
+    phoneNumber = '1111-22-33';
 
-    changeSize(newSize: number) {
-        this.fontSize = newSize;
+    onCall() {
+        console.log(this.phoneNumber);
     }
 }
