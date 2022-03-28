@@ -1,24 +1,9 @@
-<div [class.sale]="onSale">"sale" class</div>
-<div [class]="{
-    classOne: false,
-    classTwo: true
-}">"classTwo" class</div>
-<div [class]="[
-    'classOne',
-    'classTwo',
-    'classThree'
-]">Many classes</div>
-<div [style.backgroundColor]="'red'">"background-color" style</div>
-<div [style]="'width: 200px; height: 30px; background: green;'">Multiple styles (string value)</div>
-<div [style]="{
-    width: '200px',
-    height: '30px',
-    background: 'blue'
-}">Multiple styles (object value)</div>
-<table>
-    <tr>
-        <td [attr.colSpan]="1 + 1">
-            <img [attr.src]="itemImageUrl" />
-        </td>
-    </tr>
-</table>
+<app-item (deleteRequest)="deleteItem($event)">
+    <table>
+        <tr>
+            <td [attr.colSpan]="1 + 1">
+                <img [attr.src]="itemImageUrl" />
+            </td>
+        </tr>
+    </table>
+</app-item>
