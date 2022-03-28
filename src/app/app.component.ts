@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    showText = false;
-
-    toggleText(event: any) {
-        this.showText = !this.showText
-        console.log(event);
-    }
+    todayDate = new Date();
 }
