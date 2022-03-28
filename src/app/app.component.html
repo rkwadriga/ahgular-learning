@@ -1,4 +1,5 @@
-<app-item (deleteRequest)="deleteItem($event)">
+<!--<app-app-sizer [size]="fontSize" (sizeChange)="changeSize($event)">--> <!-- Long way for "two-ways" binding -->
+<app-app-sizer [(size)]="fontSize"> <!-- Short way for "two-ways" binding -->
     <table>
         <tr>
             <td [attr.colSpan]="1 + 1">
@@ -6,4 +7,5 @@
             </td>
         </tr>
     </table>
-</app-item>
+    <div [style.fontSize.px]="fontSize">Resizable text</div>
+</app-app-sizer>

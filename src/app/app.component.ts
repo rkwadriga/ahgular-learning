@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     itemImageUrl = 'http://localhost:3000/public/img/0015/15/e6f96024d40a3.jpeg';
+    fontSize = 16;
 
-    deleteItem(item: any) {
-        console.log(item);
+    changeSize(newSize: number) {
+        this.fontSize = newSize;
     }
 }
