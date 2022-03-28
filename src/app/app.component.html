@@ -6,7 +6,23 @@
     </tr>
     <tr>
         <td>
-            <p [appHighlight]="'red'">Highlight Directive</p>
+            <div *ngIf="isActive">Here I am!</div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                <li *ngFor="let user of users; let i = index">{{i + 1}}) {{user.name}}</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul [ngSwitch]="currentUser">
+                <li *ngSwitchCase="users[0]">Hi {{users[0].name}}!</li>
+                <li *ngSwitchCase="users[1]">Hi {{users[1].name}}!</li>
+                <li *ngSwitchDefault>Hi friend!</li>
+            </ul>
         </td>
     </tr>
     <tr>
