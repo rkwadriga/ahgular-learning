@@ -1,0 +1,9 @@
+<h1>Users</h1>
+<table *ngFor="let user of users">
+    <tr>
+        <td [attr.colSpan]="2">{{user.name}}</td>
+        <td [attr.colSpan]="2">
+            <img appImgSize [attr.src]="user.avatar" />
+        </td>
+    </tr>
+</table>

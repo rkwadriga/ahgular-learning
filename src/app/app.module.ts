@@ -4,22 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
-import { ChildComponent } from './child/child.component';
-import { ParentComponent } from './parent/parent.component';
-import { GreetingsPipe } from './greetings.pipe';
-import { ItemComponent } from './item/item.component';
-import { AppSizerComponent } from './app-sizer/app-sizer.component';
-import { ImgSizeDirective } from './img-size.directive';
+import { ImgSizeDirective } from './user/img-size.directive';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
 declarations: [
         AppComponent,
-        ParentComponent,
-        ChildComponent,
-        GreetingsPipe,
-        ItemComponent,
-        AppSizerComponent,
         ImgSizeDirective,
+        UserComponent,
     ],
     imports: [
         BrowserModule,

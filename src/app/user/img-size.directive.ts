@@ -4,20 +4,20 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
   selector: '[appImgSize]'
 })
 export class ImgSizeDirective {
-    defaultSize = '200px';
+    defaultSize = '100px';
 
     constructor(private el: ElementRef) {
-        el.nativeElement.style.width = this.defaultSize;
+        el.nativeElement.style.height = this.defaultSize;
     }
 
     @HostListener('mouseenter') onMouseEnter() {
-        this.resize('400px');
+        this.resize('300px');
     }
     @HostListener('mouseleave') onMouseLeave() {
         this.resize(this.defaultSize);
     }
 
     private resize(size: string) {
-        this.el.nativeElement.style.width = size;
+        this.el.nativeElement.style.height = size;
     }
 }
