@@ -6,3 +6,7 @@
 :host(.active) {
     border: 1px solid green;
 }
+
+:host-context(.theme-light) h2 {
+    background-color: #eef;
+}
