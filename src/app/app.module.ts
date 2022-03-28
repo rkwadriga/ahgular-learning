@@ -10,6 +10,7 @@ import { GreetingsPipe } from './greetings.pipe';
 import { ItemComponent } from './item/item.component';
 import { AppSizerComponent } from './app-sizer/app-sizer.component';
 import { HighlightDirective } from './highlight.directive';
+import { ImgSizeDirective } from './img-size.directive';
 
 @NgModule({
 declarations: [
@@ -20,6 +21,7 @@ declarations: [
         ItemComponent,
         AppSizerComponent,
         HighlightDirective,
+        ImgSizeDirective,
     ],
     imports: [
         BrowserModule,
