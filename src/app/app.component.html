@@ -6,13 +6,23 @@
     </tr>
     <tr>
         <td>
-             <!-- Just create a button with ID "phone" an put it's value in callback-function -->
-            <!--<input #phone type="text" placeholder="Phone number" />
-            <button (click)="onCall(phone.value)">Call</button>-->
-
-            <!-- Make an input as "model" of component "phoneNumber" param -->
-            <input [(ngModel)]="phoneNumber" type="text" placeholder="Phone number" />
-            <button (click)="onCall()">Call</button>
+             <div [ngClass]="isSpecial ? 'special' : ''">Is special</div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div [ngClass]="currentClasses">Multiple classes</div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div [ngStyle]="currentStyle">Styled dir</div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="example">{{name}}</label>
+            <input [(ngModel)]="name" type="text" id="example">
         </td>
     </tr>
 </table>
