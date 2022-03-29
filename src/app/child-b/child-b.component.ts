@@ -19,8 +19,7 @@ export class ChildBComponent implements OnInit {
 
     async ngOnInit(): Promise<void> {
         const userID = this.route.snapshot.paramMap.get('id');
-        this.dataService.getUser(userID).subscribe(result => {
-            console.log(result);
-        });
+        const result = await this.dataService.getUser(userID);
+        console.log(result);
     }
 }
