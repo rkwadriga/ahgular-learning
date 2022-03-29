@@ -1,9 +1,31 @@
-<nav>
+<!--<nav>
     <ul>
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/user">Users</a></li>
         <li><a routerLink="/admin/123">Admin</a></li>
     </ul>
 </nav>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet>-->
 
+<p>{{model | json}}</p>
+<div>
+    <form #petForm="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Name</label>
+            <input [(ngModel)]="model.name" type="text" id="name" name="name" required />
+        </div>
+        <div>
+            <label for="specie">Specie</label>
+            <select [(ngModel)]="model.specie" id="specie" name="specie" required>
+                <option *ngFor="let specie of species" [value]="specie">{{specie}}</option>
+            </select>
+        </div>
+        <button type="submit" [disabled]="!petForm.form.valid">Submit</button>
+    </form>
+</div>
+<div [hidden]="!submitted">
+    <h4>You submitted:</h4>
+    <p>Name: {{model.name}}</p>
+    <p>Specie: {{model.specie}}</p>
+    <button (click)="submitted = false">Edit</button>
+</div>
