@@ -4,11 +4,13 @@ import {UserComponent} from "./user/user.component";
 import {AdminComponent} from "./admin/admin.component";
 import {ChildAComponent} from "./child-a/child-a.component";
 import {ChildBComponent} from "./child-b/child-b.component";
+import {MyGuard} from "./my.guard";
 
 const routes: Routes = [
     {
         path: "user",
-        component: UserComponent
+        component: UserComponent,
+        canActivate: [MyGuard]
     },
     {
         path: 'admin/:id',
