@@ -13,7 +13,7 @@ const routes: Routes = [
         canActivate: [MyGuard]
     },
     {
-        path: 'admin/:id',
+        path: 'admin',
         component: AdminComponent,
         children: [
             {
@@ -21,7 +21,7 @@ const routes: Routes = [
                 component: ChildAComponent
             },
             {
-                path: "child-b",
+                path: "user/:id",
                 component: ChildBComponent
             }
         ]
