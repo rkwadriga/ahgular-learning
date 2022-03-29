@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { ImgSizeDirective } from './user/img-size.directive';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
+import { ChildAComponent } from './child-a/child-a.component';
+import { ChildBComponent } from './child-b/child-b.component';
 
 @NgModule({
 declarations: [
@@ -14,6 +16,8 @@ declarations: [
         ImgSizeDirective,
         UserComponent,
         AdminComponent,
+        ChildAComponent,
+        ChildBComponent,
     ],
     imports: [
         BrowserModule,
