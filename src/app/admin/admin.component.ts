@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
     selector: 'app-admin',
@@ -7,7 +7,6 @@ import {Router, ActivatedRoute, ParamMap} from "@angular/router";
     styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
     constructor(
         private readonly route: ActivatedRoute
     ) { }
@@ -15,5 +14,4 @@ export class AdminComponent implements OnInit {
     ngOnInit(): void {
         console.log(this.route.snapshot.paramMap.get('id'));
     }
-
 }
