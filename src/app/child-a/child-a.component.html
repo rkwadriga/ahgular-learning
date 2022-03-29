@@ -1,11 +1,21 @@
 <h2>Child A</h2>
 
-<form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
-    <label for="first_name">First name: </label>
-    <input type="text" id="first_name" formControlName="firstName" />
-    <br />
-    <label for="last_name">Last name: </label>
-    <input type="text" id="last_name" formControlName="lastName" />
-    <br />
-    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+<form>
+    <input
+        type="text"
+        id="name"
+        required
+        minlength="4"
+        [(ngModel)]="nameInput"
+        [ngModelOptions]="{standalone: true}"
+        #name="ngModel"
+    />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors?.['required']">
+            Name is required.
+        </div>
+        <div *ngIf="name.errors?.['minlength']">
+            Name must be at least 4 characters long.
+        </div>
+    </div>
 </form>
