@@ -1,10 +1,5 @@
-import {Component, OnInit, Input, Renderer2, ElementRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LogService} from "../log.service";
-
-interface User {
-    name: string,
-    avatar: string
-};
 
 @Component({
     selector: 'app-user',
@@ -12,16 +7,26 @@ interface User {
     styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-    @Input() users: User[] = [];
+    users = [
+        {
+            name: 'Monika',
+            avatar: 'http://localhost:3000/public/img/0015/15/e6f96024d40a3.jpeg'
+        },
+        {
+            name: 'Sonika',
+            avatar: 'http://localhost:3000/public/img/0017/17/4d257364618b7.jpeg'
+        },
+        {
+            name: 'Ebonika',
+            avatar: 'http://localhost:3000/public/img/0018/18/e1841c53b871e.jpeg'
+        }
+    ];
 
     constructor(
-        private readonly logger: LogService,
-        private readonly renderer: Renderer2,
-        private readonly host: ElementRef
+        private readonly logger: LogService
     ) { }
 
     ngOnInit(): void {
         this.logger.log('Hello from user component');
-        this.renderer.setStyle(this.host.nativeElement, 'color', 'blue');
     }
 }
