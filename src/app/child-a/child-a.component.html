@@ -1,21 +1,17 @@
 <h2>Child A</h2>
 
-<form>
+<form [formGroup]="validationForm">
     <input
         type="text"
         id="name"
-        required
-        minlength="4"
-        [(ngModel)]="nameInput"
-        [ngModelOptions]="{standalone: true}"
-        #name="ngModel"
+        formControlName="name"
     />
-    <div *ngIf="name.invalid && (name.dirty || name.touched)">
-        <div *ngIf="name.errors?.['required']">
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+        <div *ngIf="name?.errors?.['required']">
             Name is required.
         </div>
-        <div *ngIf="name.errors?.['minlength']">
-            Name must be at least 4 characters long.
+        <div *ngIf="name?.errors?.['minlength']">
+            Name must be at least {{name?.errors?.['minlength']?.['requiredLength']}} characters long.
         </div>
     </div>
 </form>
