@@ -1,8 +1,11 @@
 <h2>Child A</h2>
 
-<label for="name">Name</label>
-<input type="text" id="name" name="name" [formControl]="name" />
-<p>Value: {{name.value}}</p>
-<p>
-    <button type="submit" (click)="updateName()">Update name</button>
-</p>
+<form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+    <label for="first_name">First name: </label>
+    <input type="text" id="first_name" formControlName="firstName" />
+    <br />
+    <label for="last_name">Last name: </label>
+    <input type="text" id="last_name" formControlName="lastName" />
+    <br />
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>

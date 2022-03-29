@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
     selector: 'app-child-a',
@@ -7,14 +7,17 @@ import {FormControl} from "@angular/forms";
     styleUrls: ['./child-a.component.css']
 })
 export class ChildAComponent implements OnInit {
-    name = new FormControl();
+    profileForm = new FormGroup({
+        firstName: new FormControl(''),
+        lastName: new FormControl('')
+    })
 
     constructor() { }
 
     ngOnInit(): void {
     }
 
-    updateName() {
-        this.name.setValue('Nancy');
+    updateProfile() {
+        console.log(this.profileForm.value);
     }
 }
